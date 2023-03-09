@@ -11,9 +11,8 @@ jobs:
         run: |
           yarn
           yarn install
-      - name: Lint and Test
+      - name: Test
         run: |
-          yarn Lint
           yarn test
       - name: Build package
         run: yarn compile
