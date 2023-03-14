@@ -14,6 +14,12 @@ jobs:
       - name: Install
         run: yarn install
 
+      - name: remove old directory
+        run: rm -rf storybook-static
+
+      - name: Build
+        run: yarn build-storybook
+
       - name: Build & deploy
         run: npm run deploy-storybook -- --ci
         env:
