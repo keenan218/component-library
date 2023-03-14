@@ -18,9 +18,9 @@ jobs:
         run: rm -rf storybook-static
 
       - name: Build
-        run: yarn build-storybook
+        run: yarn build-storybook -o .out
 
       - name: Build & deploy
-        run: npm run deploy-storybook -- --ci
+        run: npm run deploy-storybook -- --ci -e=.out
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
